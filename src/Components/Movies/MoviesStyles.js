@@ -16,6 +16,7 @@ export const Movie = styled.div`
   width: 300px;
   border-radius: 15px;
   padding: 1rem;
+  height: 100%;
   img {
     width: 100%;
     margin-bottom: 1rem;

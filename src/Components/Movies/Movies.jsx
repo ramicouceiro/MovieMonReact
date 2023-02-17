@@ -6,6 +6,9 @@ import {
   NextPrevButton,
 } from "./MoviesStyles";
 import axios from "axios";
+import WatchlistItem from "../Watchlist/WatchlistItem";
+import { WatchlistContainer } from "../Watchlist/WatchlistStyles";
+
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
@@ -33,8 +36,33 @@ const Movies = () => {
   };
 
   getMovies(page);
+
+  const [watchlist, setWatchlist] = useState([]);
+
+  const addToWatchlist = (movie) => {
+    if (!watchlist.find((m) => m.id === movie.id)) {
+      setWatchlist([...watchlist, movie]);
+    }
+  };
+
+  const removeFromWatchlist = (movie) => {
+    setWatchlist(watchlist.filter((m) => m.id !== movie.id));
+  };
+
   return (
     <>
+      <WatchlistContainer>
+        <h2>Watchlist</h2>
+        {watchlist.map((movie) => {
+          return (
+            <WatchlistItem
+              key={movie.id}
+              movie={movie}
+              removeFromWatchlist={removeFromWatchlist}
+            />
+          );
+        })}
+      </WatchlistContainer>
       <NextPrevBtnContainer>
         <NextPrevButton onClick={handleDecrement}>-</NextPrevButton>
         <p>{page}</p>
@@ -45,9 +73,8 @@ const Movies = () => {
           return (
             <MovieCard
               key={movie.id}
-              img={movie.poster_path}
-              title={movie.title}
-              id={movie.id}
+              movie={movie}
+              addToWatchlist={addToWatchlist}
             />
           );
         })}

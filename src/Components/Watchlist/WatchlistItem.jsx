@@ -1,25 +1,25 @@
 import React from "react";
 import AddBtn from "../AddBtn/AddBtn";
-import { Movie } from "./MoviesStyles";
-import { AiFillHeart } from "react-icons/ai";
+import { ImCross } from "react-icons/im";
+import { WatchlistItemStyled } from "./WatchlistStyles";
 
-const MovieCard = ({ addToWatchlist, movie }) => {
+const WatchlistItem = ({ removeFromWatchlist, movie }) => {
   return (
-    <Movie>
+    <WatchlistItemStyled>
       <img
         src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
         alt={movie.title}
       />
       <h2>{movie.title}</h2>
       <AddBtn>
-        <AiFillHeart
+        <ImCross
           onClick={() => {
-            addToWatchlist(movie);
+            removeFromWatchlist(movie);
           }}
         />
       </AddBtn>
-    </Movie>
+    </WatchlistItemStyled>
   );
 };
 
-export default MovieCard;
+export default WatchlistItem;
