@@ -31,7 +31,7 @@ const MovieCard = ({
           color={alreadyInWatchlist() ? "red" : "white"}
           onClick={() => {
             addToWatchlist(movie);
-            setColor(alreadyInWatchlist() ? true : false);
+            setColor(alreadyInWatchlist() ? !color : color);
           }}
         />
       </AddBtn>
