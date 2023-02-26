@@ -7,7 +7,7 @@ export const AddBtnStyled = styled.button`
   padding: 0.5rem 0.75rem;
   border: none;
   border-radius: 5px;
-  color: var(--white-main);
+  color: ${(props) => (props.color ? "red" : "var(--white-main)")};
   transition: 500ms;
   margin: 0.5rem;
   &:hover {

@@ -13,7 +13,9 @@ const Navbar = () => {
         <Link to="/">
           <LinkContainerStyled>INICIO</LinkContainerStyled>
         </Link>
-        <LinkContainerStyled>INICIAR SESION</LinkContainerStyled>
+        <Link to="/login">
+          <LinkContainerStyled>INICIAR SESION</LinkContainerStyled>
+        </Link>
         <LinkContainerStyled heart>
           <AiFillHeart />
         </LinkContainerStyled>

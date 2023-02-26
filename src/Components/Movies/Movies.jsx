@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import {
   MoviesContainer,
@@ -10,6 +10,10 @@ import axios from "axios";
 import Watchlist from "../Watchlist/Watchlist";
 
 const Movies = () => {
+  const saveLocalStorage = (watchlist) => {
+    localStorage.setItem("watch", JSON.stringify(watchlist));
+  };
+
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
 
@@ -42,12 +46,21 @@ const Movies = () => {
   const addToWatchlist = (movie) => {
     if (!watchlist.find((m) => m.id === movie.id)) {
       setWatchlist([...watchlist, movie]);
+      saveLocalStorage([...watchlist, movie]);
     }
   };
 
   const removeFromWatchlist = (movie) => {
     setWatchlist(watchlist.filter((m) => m.id !== movie.id));
+    saveLocalStorage(watchlist.filter((m) => m.id !== movie.id));
   };
+
+  useEffect(() => {
+    const watchlist = JSON.parse(localStorage.getItem("watch"));
+    if (watchlist) {
+      setWatchlist(watchlist);
+    }
+  }, [watchlist]);
 
   return (
     <>
@@ -70,6 +83,8 @@ const Movies = () => {
               key={movie.id}
               movie={movie}
               addToWatchlist={addToWatchlist}
+              removeFromWatchlist={removeFromWatchlist}
+              watchlist={watchlist}
             />
           );
         })}
