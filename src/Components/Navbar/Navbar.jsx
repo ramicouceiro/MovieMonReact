@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   LinkContainerStyled,
   LinksContainerStyled,
@@ -9,7 +10,9 @@ const Navbar = () => {
   return (
     <NavbarContainerStyled>
       <LinksContainerStyled>
-        <LinkContainerStyled>INICIO</LinkContainerStyled>
+        <Link to="/">
+          <LinkContainerStyled>INICIO</LinkContainerStyled>
+        </Link>
         <LinkContainerStyled>INICIAR SESION</LinkContainerStyled>
         <LinkContainerStyled heart>
           <AiFillHeart />

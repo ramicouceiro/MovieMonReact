@@ -1,8 +1,8 @@
 import React from "react";
 import { AddBtnStyled } from "./AddBtnStyles";
 
-const AddBtn = ({ children }) => {
-  return <AddBtnStyled>{children}</AddBtnStyled>;
+const AddBtn = ({ children, props }) => {
+  return <AddBtnStyled props={props}>{children}</AddBtnStyled>;
 };
 
 export default AddBtn;

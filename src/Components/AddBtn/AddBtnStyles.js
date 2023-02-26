@@ -9,7 +9,7 @@ export const AddBtnStyled = styled.button`
   border-radius: 5px;
   color: var(--white-main);
   transition: 500ms;
-
+  margin: 0.5rem;
   &:hover {
     background: var(--btn-hover);
     color: red;

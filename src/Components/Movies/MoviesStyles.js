@@ -49,5 +49,18 @@ export const NextPrevBtnContainer = styled.div`
   align-items: center;
   width: 100%;
   margin: 1rem 0;
-  margin-top: 10rem;
+  margin-top: 4rem;
+`;
+
+export const TitleContainer = styled.h1`
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
 `;

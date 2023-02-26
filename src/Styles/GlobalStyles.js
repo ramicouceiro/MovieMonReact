@@ -15,6 +15,28 @@ export const GlobalStyles = createGlobalStyle`
   --medium: 500;
   --bold: 700;
 }
+::-webkit-scrollbar {
+height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--page-btn-color); 
+  margin: 0 1rem;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--btn-color);
+  border-radius: 10px;
+  
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--btn-hover);
+}
 *{
     margin: 0;
     padding: 0;
@@ -32,6 +54,9 @@ export const GlobalStyles = createGlobalStyle`
     color: white;
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
+    }
+    body::-webkit-scrollbar {
+      display: none;
     }
     a {
     text-decoration: none;

@@ -4,10 +4,10 @@ import {
   MoviesContainer,
   NextPrevBtnContainer,
   NextPrevButton,
+  TitleContainer,
 } from "./MoviesStyles";
 import axios from "axios";
-import WatchlistItem from "../Watchlist/WatchlistItem";
-import { WatchlistContainer } from "../Watchlist/WatchlistStyles";
+import Watchlist from "../Watchlist/Watchlist";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -51,18 +51,13 @@ const Movies = () => {
 
   return (
     <>
-      <WatchlistContainer>
-        <h2>Watchlist</h2>
-        {watchlist.map((movie) => {
-          return (
-            <WatchlistItem
-              key={movie.id}
-              movie={movie}
-              removeFromWatchlist={removeFromWatchlist}
-            />
-          );
-        })}
-      </WatchlistContainer>
+      <Watchlist
+        watchlist={watchlist}
+        removeFromWatchlist={removeFromWatchlist}
+      />
+      <TitleContainer>
+        <h1>Peliculas populares</h1>
+      </TitleContainer>
       <NextPrevBtnContainer>
         <NextPrevButton onClick={handleDecrement}>-</NextPrevButton>
         <p>{page}</p>
