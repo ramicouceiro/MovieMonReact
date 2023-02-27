@@ -7,10 +7,10 @@ export const WatchlistContainer = styled.div`
   padding: 4rem 1rem;
   gap: 1rem;
   background: var(--bg-color);
+  position: relative;
   box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
-  position: sticky;
 `;
 
 export const WatchlistItemStyled = styled.div`
@@ -22,12 +22,14 @@ export const WatchlistItemStyled = styled.div`
   align-items: center;
   background: var(--card-color);
   border-radius: 10px;
-  border: 1px solid var(--btn-color);
+  /* border: 1px solid var(--btn-color); */
+  box-shadow: 0px 0px 21px 0px var(--btn-color);
 
   img {
     height: 100px;
     object-fit: contain;
     margin: 0 1rem;
+    border-radius: 10px;
   }
 
   h2 {

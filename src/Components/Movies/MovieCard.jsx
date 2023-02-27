@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import AddBtn from "../AddBtn/AddBtn";
 import { Movie } from "./MoviesStyles";
 import { AiFillHeart } from "react-icons/ai";
 
@@ -9,7 +8,7 @@ const MovieCard = ({
   removeFromWatchlist,
   watchlist,
 }) => {
-  const [color, setColor] = useState(false);
+  const [color, setColor] = useState("white");
 
   const alreadyInWatchlist = () => {
     if (watchlist.find((m) => m.id === movie.id)) {
@@ -26,17 +25,27 @@ const MovieCard = ({
         alt={movie.title}
       />
       <h2>{movie.title}</h2>
-      <AddBtn>
-        <AiFillHeart
-          color={alreadyInWatchlist() ? "red" : "white"}
-          onClick={() => {
-            alreadyInWatchlist()
-              ? removeFromWatchlist(movie)
-              : addToWatchlist(movie);
-            setColor(alreadyInWatchlist() ? !color : color);
-          }}
-        />
-      </AddBtn>
+      {/* <AddBtn> */}
+      <AiFillHeart
+        style={{
+          cursor: "pointer",
+          backgroundColor: "var(--btn-color)",
+          borderRadius: "10px",
+          width: "30px",
+          height: "30px",
+          padding: "8px",
+          marginTop: "10px",
+          transition: "250ms",
+        }}
+        color={alreadyInWatchlist() ? "red" : "white"}
+        onClick={() => {
+          alreadyInWatchlist()
+            ? removeFromWatchlist(movie)
+            : addToWatchlist(movie);
+          setColor(alreadyInWatchlist() ? !color : color);
+        }}
+      />
+      {/* </AddBtn> */}
     </Movie>
   );
 };

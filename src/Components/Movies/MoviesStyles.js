@@ -11,15 +11,22 @@ export const MoviesContainer = styled.div`
 `;
 
 export const Movie = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   text-align: center;
   background: var(--card-color);
   width: 300px;
   border-radius: 15px;
   padding: 1rem;
   height: 100%;
+  position: relative;
+  box-shadow: 0px 0px 21px 0px var(--btn-color);
   img {
     width: 100%;
     margin-bottom: 1rem;
+    border-radius: 10px;
   }
   h2 {
     font-weight: 600;
@@ -30,13 +37,15 @@ export const Movie = styled.div`
 export const NextPrevButton = styled.button`
   background: var(--btn-color);
   cursor: pointer;
-  padding: 0.5rem 0.75rem;
+  width: 30px;
+  height: 30px;
   border: none;
   border-radius: 5px;
   color: var(--white-main);
   margin: 0 1rem;
-  font-weight: 600;
+  font-weight: var(--bold);
   transition: 500ms;
+  font-size: 1rem;
 
   &:hover {
     background: var(--btn-hover);

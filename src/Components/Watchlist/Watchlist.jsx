@@ -1,3 +1,4 @@
+import { NextPrevButton } from "../Movies/MoviesStyles";
 import WatchlistItem from "./WatchlistItem";
 import { WatchlistContainer } from "./WatchlistStyles";
 
@@ -20,6 +21,20 @@ const Watchlist = (props) => {
             />
           );
         })}
+        <NextPrevButton
+          style={{
+            marginTop: "20px",
+            position: "absolute",
+            bottom: "10px",
+            right: "50%",
+            padding: "10px",
+            width: "fit-content",
+            transform: "translateX(50%)",
+          }}
+          onClick={props.clearWatchlist}
+        >
+          Clear Watchlist
+        </NextPrevButton>
       </WatchlistContainer>
     );
   }

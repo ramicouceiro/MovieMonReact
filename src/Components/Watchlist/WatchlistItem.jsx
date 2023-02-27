@@ -1,5 +1,4 @@
 import React from "react";
-import AddBtn from "../AddBtn/AddBtn";
 import { ImCross } from "react-icons/im";
 import { WatchlistItemStyled } from "./WatchlistStyles";
 
@@ -11,13 +10,22 @@ const WatchlistItem = ({ removeFromWatchlist, movie }) => {
         alt={movie.title}
       />
       <h2>{movie.title}</h2>
-      <AddBtn>
-        <ImCross
-          onClick={() => {
-            removeFromWatchlist(movie);
-          }}
-        />
-      </AddBtn>
+      <ImCross
+        className="remove-btn"
+        style={{
+          cursor: "pointer",
+          backgroundColor: "var(--btn-color)",
+          borderRadius: "10px",
+          minWidth: "30px",
+          minHeight: "30px",
+          padding: "10px",
+          transition: "250ms",
+          marginLeft: "10px",
+        }}
+        onClick={() => {
+          removeFromWatchlist(movie);
+        }}
+      />
     </WatchlistItemStyled>
   );
 };

@@ -55,6 +55,10 @@ const Movies = () => {
     saveLocalStorage(watchlist.filter((m) => m.id !== movie.id));
   };
 
+  const clearWatchlist = () => {
+    setWatchlist([]);
+    saveLocalStorage([]);
+  };
   useEffect(() => {
     const watchlist = JSON.parse(localStorage.getItem("watch"));
     if (watchlist) {
@@ -67,6 +71,7 @@ const Movies = () => {
       <Watchlist
         watchlist={watchlist}
         removeFromWatchlist={removeFromWatchlist}
+        clearWatchlist={clearWatchlist}
       />
       <TitleContainer>Peliculas populares</TitleContainer>
       <NextPrevBtnContainer>

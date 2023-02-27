@@ -67,4 +67,8 @@ height: 10px;
     li {
     list-style: none;
     }
+
+    .remove-btn:hover{
+      color: red;
+    }
 `;
