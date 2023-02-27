@@ -6,8 +6,9 @@ export const WatchlistContainer = styled.div`
   overflow-x: auto;
   padding: 4rem 1rem;
   gap: 1rem;
+  width: 100%;
+  top: 70px;
   background: var(--bg-color);
-  position: relative;
   box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);

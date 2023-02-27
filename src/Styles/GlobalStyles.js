@@ -71,4 +71,8 @@ height: 10px;
     .remove-btn:hover{
       color: red;
     }
+
+    .hidden{
+      display: none;
+    }
 `;

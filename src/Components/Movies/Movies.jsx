@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import MovieCard from "./MovieCard";
 import {
   MoviesContainer,
@@ -54,7 +54,6 @@ const Movies = () => {
     setWatchlist(watchlist.filter((m) => m.id !== movie.id));
     saveLocalStorage(watchlist.filter((m) => m.id !== movie.id));
   };
-
   const clearWatchlist = () => {
     setWatchlist([]);
     saveLocalStorage([]);
@@ -65,7 +64,6 @@ const Movies = () => {
       setWatchlist(watchlist);
     }
   }, []);
-
   return (
     <>
       <Watchlist

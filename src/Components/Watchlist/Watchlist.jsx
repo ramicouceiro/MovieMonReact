@@ -1,17 +1,16 @@
-import { NextPrevButton } from "../Movies/MoviesStyles";
 import WatchlistItem from "./WatchlistItem";
 import { WatchlistContainer } from "./WatchlistStyles";
 
 const Watchlist = (props) => {
   if (props.watchlist.length === 0) {
     return (
-      <WatchlistContainer>
+      <WatchlistContainer className={`${props.hidden ? "hidden" : ""}`}>
         <h2 style={{ fontWeight: "var(--medium)" }}>Tu watchlist esta vacía</h2>
       </WatchlistContainer>
     );
   } else {
     return (
-      <WatchlistContainer>
+      <WatchlistContainer className={`${props.hidden ? "hidden" : ""}`}>
         {props.watchlist.map((movie) => {
           return (
             <WatchlistItem
@@ -21,20 +20,6 @@ const Watchlist = (props) => {
             />
           );
         })}
-        <NextPrevButton
-          style={{
-            marginTop: "20px",
-            position: "absolute",
-            bottom: "10px",
-            right: "50%",
-            padding: "10px",
-            width: "fit-content",
-            transform: "translateX(50%)",
-          }}
-          onClick={props.clearWatchlist}
-        >
-          Clear Watchlist
-        </NextPrevButton>
       </WatchlistContainer>
     );
   }
