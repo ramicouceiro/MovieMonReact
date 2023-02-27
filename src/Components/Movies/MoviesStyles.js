@@ -4,7 +4,7 @@ export const MoviesContainer = styled.div`
   display: grid;
   place-items: center;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, 400px);
+  grid-template-columns: repeat(auto-fit, 350px);
   row-gap: 3.5rem;
   width: 100%;
   padding: 1rem 0;

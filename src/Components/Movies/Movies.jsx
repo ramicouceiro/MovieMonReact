@@ -60,7 +60,7 @@ const Movies = () => {
     if (watchlist) {
       setWatchlist(watchlist);
     }
-  }, [watchlist]);
+  }, []);
 
   return (
     <>
@@ -68,9 +68,7 @@ const Movies = () => {
         watchlist={watchlist}
         removeFromWatchlist={removeFromWatchlist}
       />
-      <TitleContainer>
-        <h1>Peliculas populares</h1>
-      </TitleContainer>
+      <TitleContainer>Peliculas populares</TitleContainer>
       <NextPrevBtnContainer>
         <NextPrevButton onClick={handleDecrement}>-</NextPrevButton>
         <p>{page}</p>

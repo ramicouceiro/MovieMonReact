@@ -18,6 +18,12 @@ export const LoginBox = styled.div`
   height: 600px;
   box-shadow: 0px 0px 18px 0px rgb(29, 35, 54);
   margin-top: 100px;
+  @media (max-width: 768px) {
+    justify-content: center;
+    width: 600px;
+    height: fit-content;
+    padding: 20px;
+  }
 `;
 
 export const LoginLeft = styled.div`
@@ -72,4 +78,7 @@ export const LoginRight = styled.div`
   background-image: linear-gradient(transparent, black), url(${img});
   background-repeat: no-repeat;
   background-position: center;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;

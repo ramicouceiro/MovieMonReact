@@ -4,9 +4,16 @@ import img from "../../img/images.jpg";
 export const HeroContainerStyled = styled.div`
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  padding-left: 20%;
   height: 100vh;
-  padding-left: 20rem;
+  width: 100%;
   background-image: linear-gradient(transparent, black), url(${img});
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    padding-left: 0;
+  }
 `;
 
 export const HeroTextStyled = styled.div`

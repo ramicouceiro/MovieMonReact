@@ -30,7 +30,9 @@ const MovieCard = ({
         <AiFillHeart
           color={alreadyInWatchlist() ? "red" : "white"}
           onClick={() => {
-            addToWatchlist(movie);
+            alreadyInWatchlist()
+              ? removeFromWatchlist(movie)
+              : addToWatchlist(movie);
             setColor(alreadyInWatchlist() ? !color : color);
           }}
         />

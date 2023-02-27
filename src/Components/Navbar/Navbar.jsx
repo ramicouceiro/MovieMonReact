@@ -5,7 +5,7 @@ import {
   LinksContainerStyled,
   NavbarContainerStyled,
 } from "./NavbarStyles";
-import { AiFillHeart } from "react-icons/ai";
+
 const Navbar = () => {
   return (
     <NavbarContainerStyled>
@@ -16,9 +16,6 @@ const Navbar = () => {
         <Link to="/login">
           <LinkContainerStyled>INICIAR SESION</LinkContainerStyled>
         </Link>
-        <LinkContainerStyled heart>
-          <AiFillHeart />
-        </LinkContainerStyled>
       </LinksContainerStyled>
     </NavbarContainerStyled>
   );
