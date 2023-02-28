@@ -8,6 +8,7 @@ import {
 } from "./MoviesStyles";
 import axios from "axios";
 import Watchlist from "../Watchlist/Watchlist";
+import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
 
 const Movies = () => {
   const saveLocalStorage = (watchlist) => {
@@ -64,13 +65,36 @@ const Movies = () => {
       setWatchlist(watchlist);
     }
   }, []);
+
+  const [hidden, setHidden] = useState(true);
   return (
     <>
+      <div
+        onClick={() => {
+          setHidden(!hidden);
+        }}
+        style={{
+          display: "flex",
+          height: "50px",
+          width: "100vw",
+          justifyContent: "center",
+          alignItems: "center",
+          cursor: "pointer",
+          fontWeight: "var(--bold)",
+          backgroundColor: "var(--btn-color)",
+          zIndex: "100",
+        }}
+      >
+        <p>{hidden ? "Abrir" : "Cerrar"} watchlist</p>
+        {hidden ? <AiOutlineArrowDown /> : <AiOutlineArrowUp />}
+      </div>
       <Watchlist
+        hidden={hidden}
         watchlist={watchlist}
         removeFromWatchlist={removeFromWatchlist}
         clearWatchlist={clearWatchlist}
       />
+
       <TitleContainer>Peliculas populares</TitleContainer>
       <NextPrevBtnContainer>
         <NextPrevButton onClick={handleDecrement}>-</NextPrevButton>

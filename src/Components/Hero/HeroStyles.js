@@ -9,6 +9,7 @@ export const HeroContainerStyled = styled.div`
   height: 100vh;
   width: 100%;
   background-image: linear-gradient(transparent, black), url(${img});
+  z-index: -1;
 
   @media (max-width: 768px) {
     justify-content: center;

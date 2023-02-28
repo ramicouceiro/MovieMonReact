@@ -5,7 +5,7 @@ const Watchlist = (props) => {
   if (props.watchlist.length === 0) {
     return (
       <WatchlistContainer className={`${props.hidden ? "hidden" : ""}`}>
-        <h2 style={{ fontWeight: "var(--medium)" }}>Tu watchlist esta vacía</h2>
+        <h2 style={{ fontWeight: "var(--light)" }}>Tu watchlist esta vacía</h2>
       </WatchlistContainer>
     );
   } else {

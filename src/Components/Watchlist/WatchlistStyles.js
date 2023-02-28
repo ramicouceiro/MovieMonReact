@@ -2,16 +2,13 @@ import styled from "styled-components";
 
 export const WatchlistContainer = styled.div`
   display: flex;
-  z-index: 100;
   overflow-x: auto;
   padding: 4rem 1rem;
   gap: 1rem;
   width: 100%;
   top: 70px;
   background: var(--bg-color);
-  box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 `;
 
 export const WatchlistItemStyled = styled.div`
